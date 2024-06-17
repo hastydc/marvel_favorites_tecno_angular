@@ -1,0 +1,14 @@
+.logo {
+  background: transparent;
+  border: 0;
+  display: flex;
+  width: auto;
+  height: 100%;
+  cursor: pointer;
+
+  &__img {
+    width: auto;
+    height: 100%;
+    display: flex;
+  }
+}
