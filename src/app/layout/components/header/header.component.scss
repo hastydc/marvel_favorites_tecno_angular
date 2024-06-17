@@ -1,0 +1,36 @@
+@import 'functions';
+@import 'mixins';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  height: rem(64);
+  background: var(--color-gradient);
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: rem(16);
+  z-index: 10;
+  position: relative;
+  box-shadow: var(--color-shadow) 0 rem(8) rem(24);
+
+  &__back {
+    display: flex;
+    width: auto;
+    height: 75%;
+  }
+
+  &__logo {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__img {
+    cursor: pointer;
+  }
+}
+
+.header-menu-panel {
+}

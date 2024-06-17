@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="header__back">
+    <app-back-button />
+  </div>
+
+  <div class="header__logo">
+    <app-logo />
+  </div>
+
+  <div class="header__menu-icon">
+    <app-menu-icon [active]="showMenu" (actionToggleMenu)="toggleMenu()" />
+  </div>
+</header>
+
+<div class="header-menu-panel">
+  <app-menu-panel
+    [active]="showMenu"
+    [menuItems]="menuItems"
+    (actionToggleMenu)="toggleMenu()"
+  />
+</div>
