@@ -1,0 +1,8 @@
+@import 'functions';
+@import 'mixins';
+
+.main {
+  margin-top: rem(64);
+  box-sizing: border-box;
+  padding: rem(32);
+}

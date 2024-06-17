@@ -13,6 +13,9 @@
   z-index: 10;
   position: relative;
   box-shadow: var(--color-shadow) 0 rem(8) rem(24);
+  position: fixed;
+  width: 100%;
+  top: 0;
 
   &__back {
     display: flex;
@@ -30,7 +33,4 @@
   &__img {
     cursor: pointer;
   }
-}
-
-.header-menu-panel {
 }
