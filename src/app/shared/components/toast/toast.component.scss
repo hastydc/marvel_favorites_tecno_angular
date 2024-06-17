@@ -1,0 +1,19 @@
+@import 'vars';
+
+.toast {
+  height: rem(32);
+  display: flex;
+  font-size: rem(14);
+  line-height: rem(14);
+  box-sizing: border-box;
+  padding: rem(8) rem(16);
+  border-radius: rem(16);
+  margin: 0 auto;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: rem(2) solid rgba($colorWhite, 0.2);
+
+  &--error {
+    background-color: var(--color-red-hover);
+  }
+}
