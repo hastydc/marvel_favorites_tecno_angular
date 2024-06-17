@@ -8,18 +8,23 @@
   --color-red-hover: #{$colorRedHover};
   --color-black: #{$colorBlack};
   --color-white: #{$colorWhite};
-  --color-contrast: #{$colorWhite};
+  --color-contrast-white: #{$colorWhite};
+  --color-contrast-black: #{$colorBlack};
   --color-gradient: #{$colorGradient};
   --color-gradient-red: #{$colorGradientRed};
-  --color-shadow: #{$colorShadow};
+  --color-shadow: #{$colorShadowBlack};
 }
 
 [data-theme='light'] {
-  --color-contrast: #{$colorWhite};
+  --color-contrast-white: #{$colorWhite};
+  --color-contrast-black: #{$colorBlack};
+  --color-shadow: #{$colorShadowBlack};
 }
 
 [data-theme='dark'] {
-  --color-contrast: #{$colorBlack};
+  --color-contrast-white: #{$colorBlack};
+  --color-contrast-black: #{$colorWhite};
+  --color-shadow: #{$colorShadowWhite};
 }
 
 body {
@@ -27,4 +32,7 @@ body {
   padding: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: var(--color-contrast-white);
+  transition: 0.25s ease-in-out;
+  color: var(--color-contrast-black);
 }

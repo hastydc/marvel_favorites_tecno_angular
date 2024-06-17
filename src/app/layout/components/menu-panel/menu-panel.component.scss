@@ -11,7 +11,7 @@
   right: 0;
   transition: 0.5s ease-in-out;
   background-color: var(--color-black);
-  box-shadow: var(--color-shadow) 0 rem(8) rem(24);
+  box-shadow: var(--color-shadow) 0 0 rem(28);
   width: 100%;
 
   @include media(tablet) {
@@ -48,7 +48,7 @@
 
   &__link {
     text-decoration: none;
-    color: var(--color-contrast);
+    color: var(--color-white);
     font-weight: 600;
     display: flex;
     width: 100%;
