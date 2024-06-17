@@ -1,0 +1,12 @@
+@import 'functions';
+
+/** Colors */
+$colorBlack: #202020;
+$colorWhite: #ffffff;
+$colorRed: #e62429;
+$colorRedHover: #eb2328;
+$colorGradient: linear-gradient(270deg, $colorRed -50%, $colorBlack 50%);
+$colorGradientRed: linear-gradient(270deg, $colorRed -50%, $colorBlack 150%);
+
+/** Shadows */
+$boxShadow: rgba($colorBlack, 0.2) rem(0) rem(8) rem(24);

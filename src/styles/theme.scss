@@ -1,0 +1,29 @@
+@import 'vars';
+@import 'functions';
+@import 'mixins';
+@import '@angular/cdk/overlay-prebuilt.css';
+
+:root {
+  --color-red: #{$colorRed};
+  --color-red-hover: #{$colorRedHover};
+  --color-black: #{$colorBlack};
+  --color-white: #{$colorWhite};
+  --color-contrast: #{$colorWhite};
+  --color-gradient: #{$colorGradient};
+  --color-gradient-red: #{$colorGradientRed};
+}
+
+[data-theme='light'] {
+  --color-contrast: #{$colorWhite};
+}
+
+[data-theme='dark'] {
+  --color-contrast: #{$colorBlack};
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
