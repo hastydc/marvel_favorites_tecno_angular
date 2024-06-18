@@ -89,11 +89,32 @@
   }
 
   &__content {
-    display: none;
+    max-height: 0;
     width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    transition-property: max-height, opacity;
+    transition-duration: 1s, 1s;
+    transition-delay: 0s, 1s;
+    transition-timing-function: linear;
+    visibility: hidden;
+
+    @include media(tablet) {
+      transition-property: max-width, opacity;
+      max-width: rem(0);
+      max-height: auto;
+    }
 
     &--active {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
+      max-height: rem(10000);
+
+      @include media(tablet) {
+        max-height: auto;
+        max-width: (100vw);
+      }
     }
   }
 }
