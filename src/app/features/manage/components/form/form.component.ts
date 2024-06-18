@@ -19,6 +19,9 @@ import { ButtonComponent } from '@app/shared/components/button/button.component'
 import { InputComponent } from '@app/shared/components/input/input.component';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * FormComponent
+ */
 @Component({
   selector: 'app-form',
   standalone: true,
@@ -34,23 +37,37 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './form.component.scss',
 })
 export class FormComponent implements OnInit {
+  /** btnAction */
   @Output() btnAction: EventEmitter<UserData> = new EventEmitter<UserData>();
 
+  /** btnLabel */
   @Input() btnLabel: string = '';
 
+  /** signUp */
   @Input() signUp: boolean = false;
 
+  /** loading */
   @Input() loading: boolean = false;
 
+  /** formBuilder */
   private readonly formBuilder: FormBuilder = inject(FormBuilder);
 
+  /** form */
   form!: FormGroup;
+
+  /** formKey */
   formKey = SessionFormKey;
 
+  /**
+   * ngOnInit
+   */
   ngOnInit(): void {
     this.initForm();
   }
 
+  /**
+   * initForm
+   */
   initForm(): void {
     let controls: SessionForm = {
       [SessionFormKey.EMAIL]: ['', [Validators.required, Validators.email]],
@@ -60,6 +77,9 @@ export class FormComponent implements OnInit {
     this.form = this.formBuilder.group<SessionForm>(controls);
   }
 
+  /**
+   * action
+   */
   action(): void {
     this.btnAction.emit(this.form.getRawValue());
   }

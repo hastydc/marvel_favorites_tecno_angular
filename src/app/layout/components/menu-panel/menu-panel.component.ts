@@ -4,6 +4,9 @@ import { RouterModule } from '@angular/router';
 import { MenuItem } from '@app/models/menuItem.interface';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * MenuPanelComponent
+ */
 @Component({
   selector: 'app-menu-panel',
   standalone: true,

@@ -3,6 +3,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { RouterOutlet } from '@angular/router';
 import { ToastComponent } from '@app/shared/components/toast/toast.component';
 
+/**
+ * LayoutComponent
+ */
 @Component({
   selector: 'app-layout',
   standalone: true,

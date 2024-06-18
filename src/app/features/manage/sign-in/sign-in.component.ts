@@ -9,6 +9,9 @@ import { ManageService } from '../services/manage.service';
 import { catchError, finalize } from 'rxjs';
 import { ToastService } from '@app/shared/components/toast/toast.service';
 
+/**
+ * SignInComponent
+ */
 @Component({
   selector: 'app-sign-in',
   standalone: true,
@@ -17,13 +20,25 @@ import { ToastService } from '@app/shared/components/toast/toast.service';
   styleUrl: './sign-in.component.scss',
 })
 export class SignInComponent {
+  /** manageService */
   private readonly manageService = inject(ManageService);
+
+  /** toastService */
   private readonly toastService = inject(ToastService);
+
+  /** router */
   private readonly router = inject(Router);
 
+  /** routePath */
   routePath = RoutePath;
+
+  /** loading */
   loading: boolean = false;
 
+  /**
+   * signIn
+   * @param {UserData} payload
+   */
   signIn(payload: UserData): void {
     this.loading = true;
 

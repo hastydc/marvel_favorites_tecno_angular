@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * NotFoundComponent
+ */
 @Component({
   selector: 'app-not-found',
   standalone: true,

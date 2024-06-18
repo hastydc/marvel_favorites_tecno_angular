@@ -2,6 +2,9 @@ import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * MenuIconComponent
+ */
 @Component({
   selector: 'app-menu-icon',
   standalone: true,
