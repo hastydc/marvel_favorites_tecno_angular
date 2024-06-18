@@ -20,4 +20,20 @@ describe('TableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('toggleFavorite', () => {
+    const spy = spyOn(component.eventFavorite, 'emit').and.callThrough();
+    component.toggleFavorite({ id: 1 } as any);
+
+    expect(spy).toHaveBeenCalledWith({ id: 1 } as any);
+  });
+
+  it('toggleDetail', () => {
+    component.actives = {
+      1: false,
+    };
+    component.toggleDetail(1);
+
+    expect(component.actives[1]).toEqual(true);
+  });
 });

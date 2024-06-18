@@ -22,4 +22,18 @@ describe('ThemeSwitcherComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('toggleTheme', () => {
+    component.isDark = false;
+    component.toggleTheme();
+
+    expect(component.isDark).toBeTrue();
+  });
+
+  it('toggleTheme light', () => {
+    component.isDark = true;
+    component.toggleTheme();
+
+    expect(component.isDark).toBeFalse();
+  });
 });

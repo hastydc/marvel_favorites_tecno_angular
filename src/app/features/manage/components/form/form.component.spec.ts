@@ -22,4 +22,12 @@ describe('FormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('', () => {
+    const spy = spyOn(component.btnAction, 'emit').and.callThrough();
+
+    component.action();
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
 });

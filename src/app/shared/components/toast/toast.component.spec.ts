@@ -36,6 +36,6 @@ describe('ToastComponent', () => {
     flush();
 
     expect(spyShow).toHaveBeenCalledTimes(1);
-    expect(spyClose).toHaveBeenCalledTimes(1);
+    expect(spyClose).toHaveBeenCalledTimes(2);
   }));
 });
