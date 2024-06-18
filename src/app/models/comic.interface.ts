@@ -2,7 +2,7 @@ export interface Comic {
   id: number;
   title: string;
   isFavorite: boolean;
-  texObjects: {
+  textObjects: {
     text: string;
   }[];
   series: {
@@ -14,13 +14,14 @@ export interface Comic {
   }[];
   prices: {
     price: number;
+    type: string;
   }[];
   creators: {
     items: {
       name: string;
     }[];
   };
-  chanacters: {
+  characters: {
     items: {
       name: string;
     }[];

@@ -1,1 +1,51 @@
-<p>table works!</p>
+<div class="table">
+  <h2 class="table__title">
+    {{ 'marvelComics' | translate }}
+  </h2>
+
+  <div class="table__body">
+    @if (!comics.length) {
+    <div class="td__not-found">
+      {{ 'comicsNotFound' | translate }}
+    </div>
+    } @else { @for (comic of comics; track comic.id) {
+    <div class="td">
+      <div class="td__picture">
+        <img
+          class="td__img"
+          [alt]="'image' | translate"
+          [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"
+        />
+      </div>
+
+      <div class="td__content-wrapper">
+        <div class="td__content">
+          <h3 class="td__title">
+            {{ comic.title }}
+          </h3>
+
+          <div class="td__actions">
+            <div class="td__action">
+              <app-button
+                [label]="'favorite' | translate"
+                (click)="toggleFavorite(comic)"
+              />
+            </div>
+
+            <div class="td__action">
+              <app-button
+                [label]="'seeMore' | translate"
+                (click)="toggleDetail(comic.id)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="td__detail">
+          <app-detail [comic]="comic" />
+        </div>
+      </div>
+    </div>
+    } }
+  </div>
+</div>

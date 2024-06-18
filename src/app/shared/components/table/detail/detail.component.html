@@ -1,0 +1,57 @@
+@if (comic) {
+<article class="detail">
+  <div class="detail__card">
+    <h4 class="detail__title">{{ 'resume' | translate }}</h4>
+    <div class="detail__text">
+      {{ comic.textObjects.length ? comic.textObjects[0].text : '-' }}
+    </div>
+  </div>
+
+  <div class="detail__card">
+    <h4 class="detail__title">{{ 'series' | translate }}</h4>
+    <div class="detail__text">
+      {{ comic.series.name }}
+    </div>
+  </div>
+
+  <div class="detail__card">
+    <h4 class="detail__title">{{ 'onSaleDate' | translate }}</h4>
+    <div class="detail__text">
+      {{ comic.dates.length ? comic.dates[0].date : '-' }}
+    </div>
+  </div>
+
+  <div class="detail__card">
+    <h4 class="detail__title">{{ 'prices' | translate }}</h4>
+    <div class="detail__tags">
+      @for (item of comic.prices; track item.type) {
+      <span class="detail__tag">
+        {{ item.type | translate }}: {{ item.price }}
+      </span>
+      }
+    </div>
+  </div>
+
+  <div class="detail__card">
+    <h4 class="detail__title">{{ 'creators' | translate }}</h4>
+    <div class="detail__tags">
+      @for (item of comic.creators.items; track item.name) {
+      <span class="detail__tag">
+        {{ item.name }}
+      </span>
+      }
+    </div>
+  </div>
+
+  <div class="detail__card">
+    <h4 class="detail__title">{{ 'characters' | translate }}</h4>
+    <div class="detail__tags">
+      @for (item of comic.characters.items; track item.name) {
+      <span class="detail__tag">
+        {{ item.name }}
+      </span>
+      }
+    </div>
+  </div>
+</article>
+}

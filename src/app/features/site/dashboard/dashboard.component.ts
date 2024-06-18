@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  toggleFavorite(id: number, isFavorite: boolean): void {
+  toggleFavorite({ id, isFavorite }: Comic): void {
     this.apiService.setFavorite(this.baseComics, id, !isFavorite).subscribe({
       next: (comics) => {
         this.baseComics = comics;

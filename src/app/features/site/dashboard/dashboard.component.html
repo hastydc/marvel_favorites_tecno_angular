@@ -4,6 +4,6 @@
   </section>
 
   <section class="dashboard__table">
-    <app-table [comics]="comics" />
+    <app-table [comics]="comics" (eventFavorite)="toggleFavorite($event)" />
   </section>
 </div>

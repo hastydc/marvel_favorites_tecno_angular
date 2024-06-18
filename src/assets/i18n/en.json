@@ -19,5 +19,7 @@
   "successfulSignIn": "Successful sign in",
   "successfulSignUp": "Successful sign up",
   "allComics": "All comics",
-  "favoriteComics": "Favorite comics"
+  "favoriteComics": "Favorite comics",
+  "marvelComics": "Marvel comics",
+  "comicsNotFound": "Comics not found"
 }
