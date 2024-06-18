@@ -4,10 +4,10 @@ import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
   {
-    path: 'session',
+    path: 'manage',
     component: LayoutComponent,
     loadChildren: () =>
-      import('./features/session/session.routes').then((r) => r.SessionRoutes),
+      import('./features/manage/manage.routes').then((r) => r.ManageRoutes),
   },
   {
     path: 'site',
@@ -25,7 +25,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/session/sign-in',
+    redirectTo: '/manage/sign-in',
     pathMatch: 'full',
   },
   {

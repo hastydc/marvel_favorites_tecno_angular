@@ -10,5 +10,9 @@
   "signUp": "Sign up",
   "createList": "Create list",
   "createAnAccountHere": "Create an account here",
-  "signInHere": "Sign in here"
+  "signInHere": "Sign in here",
+  "email": "Email",
+  "password": "Password",
+  "fieldIsRequired": "Field is required",
+  "emailIsNotValid": "Email is not valid"
 }

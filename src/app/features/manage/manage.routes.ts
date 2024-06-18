@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-export const SessionRoutes: Routes = [
+export const ManageRoutes: Routes = [
   {
     path: '',
     children: [
