@@ -1,0 +1,60 @@
+<div class="table">
+  <h2 class="table__title">
+    {{ 'marvelComics' | translate }}
+  </h2>
+
+  <div class="table__body">
+    @if (!comics.length) {
+    <div class="td__not-found">
+      {{ 'comicsNotFound' | translate }}
+    </div>
+    } @else { @for (comic of comics; track comic.id) {
+    <div class="td">
+      <div class="td__content-wrapper">
+        <h3 class="td__title">
+          <div class="td__action" (click)="toggleDetail(comic.id)">
+            <app-detail-button
+              [active]="actives[comic.id]"
+              [iconClose]="'cross'"
+              [iconOpen]="'plus'"
+            />
+          </div>
+
+          {{ comic.title }}
+        </h3>
+
+        <div class="td__content-detail">
+          <div
+            class="td__content"
+            [ngClass]="{ 'td__content--active': actives[comic.id] }"
+          >
+            <div class="td__detail">
+              <app-detail [comic]="comic" />
+            </div>
+          </div>
+
+          <div
+            class="td__img"
+            [style.background-image]="
+              'url(' +
+              comic.thumbnail.path +
+              '.' +
+              comic.thumbnail.extension +
+              ')'
+            "
+          >
+            <div class="td__action" (click)="toggleFavorite(comic)">
+              <app-detail-button
+                [active]="comic.isFavorite"
+                [iconClose]="'trash'"
+                [iconOpen]="'hearth'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    } }
+  </div>
+</div>

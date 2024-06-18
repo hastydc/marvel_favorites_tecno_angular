@@ -1,0 +1,17 @@
+<div class="buttons-wrapper">
+  <div class="buttons-wrapper__button">
+    <app-button
+      [label]="'allComics' | translate"
+      [mask]="comicFilter !== comicFilterEnum.ALL"
+      (actionEvent)="filter(comicFilterEnum.ALL)"
+    />
+  </div>
+
+  <div class="buttons-wrapper__button">
+    <app-button
+      [label]="'favoriteComics' | translate"
+      [mask]="comicFilter !== comicFilterEnum.FAVORITES"
+      (actionEvent)="filter(comicFilterEnum.FAVORITES)"
+    />
+  </div>
+</div>

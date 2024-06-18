@@ -11,4 +11,10 @@
   (click)="action()"
 >
   {{ label | translate }}
+
+  @if(loading) {
+  <div class="button__loading">
+    <div class="loading"></div>
+  </div>
+  }
 </button>

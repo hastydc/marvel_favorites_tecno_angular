@@ -17,5 +17,17 @@
   "emailIsNotValid": "Email is not valid",
   "invalidCredentials": "Invalid credentials",
   "successfulSignIn": "Successful sign in",
-  "successfulSignUp": "Successful sign up"
+  "successfulSignUp": "Successful sign up",
+  "allComics": "All comics",
+  "favoriteComics": "Favorite comics",
+  "marvelComics": "Marvel comics",
+  "comicsNotFound": "Comics not found",
+  "series": "Series",
+  "resume": "Resume",
+  "onSaleDate": "On sale date",
+  "prices": "Prices",
+  "printPrice": "Print price",
+  "digitalPurchasePrice": "Digital purchase price",
+  "creators": "Creators",
+  "characters": "Characters"
 }
