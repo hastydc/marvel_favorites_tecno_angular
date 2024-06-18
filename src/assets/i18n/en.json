@@ -21,5 +21,13 @@
   "allComics": "All comics",
   "favoriteComics": "Favorite comics",
   "marvelComics": "Marvel comics",
-  "comicsNotFound": "Comics not found"
+  "comicsNotFound": "Comics not found",
+  "series": "Series",
+  "resume": "Resume",
+  "onSaleDate": "On sale date",
+  "prices": "Prices",
+  "printPrice": "Print price",
+  "digitalPurchasePrice": "Digital purchase price",
+  "creators": "Creators",
+  "characters": "Characters"
 }

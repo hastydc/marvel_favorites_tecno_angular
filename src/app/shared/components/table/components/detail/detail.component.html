@@ -2,9 +2,10 @@
 <article class="detail">
   <div class="detail__card">
     <h4 class="detail__title">{{ 'resume' | translate }}</h4>
-    <div class="detail__text">
-      {{ comic.textObjects.length ? comic.textObjects[0].text : '-' }}
-    </div>
+    <div
+      class="detail__text"
+      [innerHTML]="comic.textObjects.length ? comic.textObjects[0].text : '-'"
+    ></div>
   </div>
 
   <div class="detail__card">
@@ -17,7 +18,9 @@
   <div class="detail__card">
     <h4 class="detail__title">{{ 'onSaleDate' | translate }}</h4>
     <div class="detail__text">
-      {{ comic.dates.length ? comic.dates[0].date : '-' }}
+      {{
+        comic.dates.length ? (comic.dates[0].date | date : 'dd/MM/yyyy') : '-'
+      }}
     </div>
   </div>
 
@@ -26,7 +29,7 @@
     <div class="detail__tags">
       @for (item of comic.prices; track item.type) {
       <span class="detail__tag">
-        {{ item.type | translate }}: {{ item.price }}
+        {{ item.type | translate }}: {{ item.price | currency }}
       </span>
       }
     </div>
