@@ -8,7 +8,11 @@
       </div>
 
       <div class="sign__form">
-        <app-form [btnLabel]="'signUp'" (btnAction)="signUp($event)" />
+        <app-form
+          [btnLabel]="'signUp'"
+          [loading]="loading"
+          (btnAction)="signUp($event)"
+        />
       </div>
     </div>
   </div>

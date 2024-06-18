@@ -40,6 +40,8 @@ export class FormComponent implements OnInit {
 
   @Input() signUp: boolean = false;
 
+  @Input() loading: boolean = false;
+
   private readonly formBuilder: FormBuilder = inject(FormBuilder);
 
   form!: FormGroup;

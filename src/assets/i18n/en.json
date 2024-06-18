@@ -14,5 +14,8 @@
   "email": "Email",
   "password": "Password",
   "fieldIsRequired": "Field is required",
-  "emailIsNotValid": "Email is not valid"
+  "emailIsNotValid": "Email is not valid",
+  "invalidCredentials": "Invalid credentials",
+  "successfulSignIn": "Successful sign in",
+  "successfulSignUp": "Successful sign up"
 }
