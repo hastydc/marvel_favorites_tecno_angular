@@ -49,16 +49,17 @@ export class ToastComponent {
   }
 
   show(): void {
+    this.close();
+
     this.overlayRef = this.overlay.create(this.getOverlayConfig());
     this.overlayRef.attach(this.portal);
 
     setTimeout(() => {
       this.close();
-    }, 10000);
+    }, 4000);
   }
 
   close(): void {
-    this.overlayRef.dispose();
-    this.toastService.setData({ show: false });
+    this.overlayRef?.dispose();
   }
 }

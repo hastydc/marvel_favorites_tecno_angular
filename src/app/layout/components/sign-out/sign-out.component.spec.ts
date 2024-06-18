@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignOutComponent } from './sign-out.component';
+import { TranslateModuleMock } from '@app/shared/tests/utils.mock';
+import { ActivatedRoute } from '@angular/router';
 
 describe('SignOutComponent', () => {
   let component: SignOutComponent;
@@ -8,10 +10,10 @@ describe('SignOutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignOutComponent]
-    })
-    .compileComponents();
-    
+      imports: [SignOutComponent, TranslateModuleMock],
+      providers: [{ provide: ActivatedRoute, useValue: {} }],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SignOutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

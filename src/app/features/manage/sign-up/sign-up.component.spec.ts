@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignUpComponent } from './sign-up.component';
+import { ActivatedRoute } from '@angular/router';
+import { TranslateModuleMock } from '@app/shared/tests/utils.mock';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;
@@ -8,10 +10,10 @@ describe('SignUpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignUpComponent]
-    })
-    .compileComponents();
-    
+      imports: [SignUpComponent, TranslateModuleMock],
+      providers: [{ provide: ActivatedRoute, useValue: {} }],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SignUpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
