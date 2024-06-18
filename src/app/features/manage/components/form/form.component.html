@@ -28,6 +28,7 @@
     <div class="form__button">
       <app-button
         [disabled]="form.invalid || !form.touched || loading"
+        [loading]="loading"
         [label]="btnLabel"
         [mask]="true"
         (actionEvent)="action()"

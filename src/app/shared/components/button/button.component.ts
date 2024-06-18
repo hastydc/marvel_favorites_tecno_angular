@@ -18,6 +18,8 @@ export class ButtonComponent {
 
   @Input() disabled: boolean = false;
 
+  @Input() loading: boolean = false;
+
   @Output() actionEvent: EventEmitter<void> = new EventEmitter<void>();
 
   size: 'small' | 'big' = 'small';

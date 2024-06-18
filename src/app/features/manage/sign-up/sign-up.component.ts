@@ -25,6 +25,8 @@ export class SignUpComponent {
   loading: boolean = false;
 
   signUp(payload: UserData): void {
+    this.loading = true;
+
     this.manageService
       .signIn(payload)
       .pipe(
