@@ -10,7 +10,7 @@
     "test": "ng test --code-coverage",
     "prettier": "prettier ./src --write",
     "lint": "ng lint",
-    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s"
+    "compodoc": "compodoc -p tsconfig.doc.json -s"
   },
   "private": true,
   "dependencies": {
