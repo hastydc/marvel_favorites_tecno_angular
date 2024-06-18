@@ -5,7 +5,7 @@ import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.compone
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuItem } from '@app/models/menuItem.interface';
 import { NavigationStart, Router, RouterModule } from '@angular/router';
-import { LogoComponent } from '../logo/logo.component';
+import { LogoComponent } from '../../../shared/components/logo/logo.component';
 import { RoutePath } from '@app/models/routePath.enum';
 import { Subject, takeUntil } from 'rxjs';
 

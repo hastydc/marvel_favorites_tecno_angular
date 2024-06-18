@@ -1,1 +1,15 @@
-<p>sign-up works!</p>
+<section class="sign-in sign">
+  <div class="sign__wrapper">
+    <div class="sign__logo"><app-logo /></div>
+
+    <div class="sign__form-wrapper">
+      <div [routerLink]="routePath.SIGN_IN" class="sign__redirect">
+        {{ 'signInHere' | translate }}
+      </div>
+
+      <div class="sign__form">
+        <app-form [btnLabel]="'signUp'" (btnAction)="signUp($event)" />
+      </div>
+    </div>
+  </div>
+</section>

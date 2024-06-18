@@ -8,5 +8,7 @@
   "home": "Home",
   "signIn": "Sign in",
   "signUp": "Sign up",
-  "createList": "Create list"
+  "createList": "Create list",
+  "createAnAccountHere": "Create an account here",
+  "signInHere": "Sign in here"
 }
