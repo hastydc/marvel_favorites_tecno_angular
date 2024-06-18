@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { Theme } from '@app/models/theme.enum';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * ThemeSwitcherComponent
+ */
 @Component({
   selector: 'app-theme-switcher',
   standalone: true,

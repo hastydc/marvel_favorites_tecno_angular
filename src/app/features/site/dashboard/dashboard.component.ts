@@ -6,6 +6,9 @@ import { Comic } from '@app/models/comic.interface';
 import { ComicFilter } from '@app/models/comicFilter.enum';
 import { ToastService } from '@app/shared/components/toast/toast.service';
 
+/**
+ * DashboardCOmponent
+ */
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -14,17 +17,32 @@ import { ToastService } from '@app/shared/components/toast/toast.service';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit {
+  /** apiService */
   private readonly apiService = inject(ApiService);
+
+  /** toastService */
   private readonly toastService = inject(ToastService);
 
+  /** baseComics */
   baseComics: Comic[] = [];
+
+  /** comics */
   comics: Comic[] = [];
+
+  /** comicFIlter */
   comicFilter: ComicFilter = ComicFilter.ALL;
 
+  /**
+   * ngOnInit
+   */
   ngOnInit(): void {
     this.getComics();
   }
 
+  /**
+   * filter
+   * @param {ComicFilter} comicFilter
+   */
   filter(comicFilter: ComicFilter = ComicFilter.ALL): void {
     this.comicFilter = comicFilter;
     this.comics = this.baseComics;
@@ -38,6 +56,10 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  /**
+   * toggleFavorite
+   * @param {Comic} comic
+   */
   toggleFavorite({ id, isFavorite }: Comic): void {
     const value = !isFavorite;
 
@@ -53,6 +75,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  /**
+   * getComics
+   */
   getComics(): void {
     this.apiService.getComics().subscribe({
       next: (comics) => {

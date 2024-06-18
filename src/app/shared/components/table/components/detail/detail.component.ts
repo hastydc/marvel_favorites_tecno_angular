@@ -3,6 +3,9 @@ import { Component, Input } from '@angular/core';
 import { Comic } from '@app/models/comic.interface';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * DetailComponent
+ */
 @Component({
   selector: 'app-detail',
   standalone: true,
@@ -11,5 +14,6 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './detail.component.scss',
 })
 export class DetailComponent {
+  /** comic */
   @Input() comic!: Comic;
 }

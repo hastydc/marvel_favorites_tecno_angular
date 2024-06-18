@@ -10,6 +10,9 @@ import { RoutePath } from '@app/models/routePath.enum';
 import { Subject, takeUntil } from 'rxjs';
 import { SignOutComponent } from '../sign-out/sign-out.component';
 
+/**
+ * HeaderComponent
+ */
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -26,13 +29,16 @@ import { SignOutComponent } from '../sign-out/sign-out.component';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnDestroy, OnInit {
+  /** router */
   readonly router = inject(Router);
 
   /** showMenu */
   public showMenu: boolean = false;
 
+  /** isSessionPage */
   public isSessionPage: boolean = false;
 
+  /** unsubscribe */
   private unsubscribe: Subject<void> = new Subject();
 
   /** menuItems */
@@ -41,10 +47,16 @@ export class HeaderComponent implements OnDestroy, OnInit {
     { link: RoutePath.SING_UP, label: 'signUp' },
   ];
 
+  /**
+   * constructor
+   */
   constructor() {
     this.isSessionPage = this.router.url !== RoutePath.HOME;
   }
 
+  /**
+   * ngOnInit
+   */
   ngOnInit(): void {
     this.router.events.pipe(takeUntil(this.unsubscribe)).subscribe((event) => {
       if (!(event instanceof NavigationStart)) return;
@@ -53,6 +65,9 @@ export class HeaderComponent implements OnDestroy, OnInit {
     });
   }
 
+  /**
+   * ngOnDestroy
+   */
   ngOnDestroy(): void {
     this.unsubscribe.next();
     this.unsubscribe.complete();

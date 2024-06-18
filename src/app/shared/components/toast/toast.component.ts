@@ -11,6 +11,9 @@ import { CdkPortal, PortalModule } from '@angular/cdk/portal';
 import { Toast } from '@app/models/toast.interface';
 import { ToastService } from './toast.service';
 
+/**
+ * ToastComponent
+ */
 @Component({
   selector: 'app-toast',
   standalone: true,
@@ -19,15 +22,24 @@ import { ToastService } from './toast.service';
   styleUrl: './toast.component.scss',
 })
 export class ToastComponent {
+  /** portal */
   @ViewChild(CdkPortal) portal!: CdkPortal;
 
+  /** overlay */
   private readonly overlay = inject(Overlay);
+
+  /** toastService */
   private readonly toastService = inject(ToastService);
 
+  /** overlayRef */
   overlayRef!: OverlayRef;
 
+  /** data */
   data: Toast = { show: false, text: '' };
 
+  /**
+   * Constructor
+   */
   constructor() {
     effect(() => {
       this.data = this.toastService.getData();
@@ -36,6 +48,9 @@ export class ToastComponent {
     });
   }
 
+  /**
+   * getOverlayConfig
+   */
   getOverlayConfig(): OverlayConfig {
     return new OverlayConfig({
       hasBackdrop: false,
@@ -48,6 +63,9 @@ export class ToastComponent {
     });
   }
 
+  /**
+   * show
+   */
   show(): void {
     this.close();
 
@@ -59,6 +77,9 @@ export class ToastComponent {
     }, 4000);
   }
 
+  /**
+   * close
+   */
   close(): void {
     this.overlayRef?.dispose();
   }

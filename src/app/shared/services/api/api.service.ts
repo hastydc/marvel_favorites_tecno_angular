@@ -4,16 +4,30 @@ import { Comic } from '@app/models/comic.interface';
 import { ComicFilter } from '@app/models/comicFilter.enum';
 import { Observable, of } from 'rxjs';
 
+/**
+ * ApiService
+ */
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
+  /** http */
   private readonly http = inject(HttpClient);
 
+  /**
+   * getComics
+   * @returns {Observable} response
+   */
   getComics(): Observable<Comic[]> {
     return this.http.get<Comic[]>('./assets/api/comics.mock.json');
   }
 
+  /**
+   * getComicsFiltered
+   * @param {Comic[]} comics
+   * @param {ComicFilter} comicFilter
+   * @returns {Observable} response
+   */
   getComicsFiltered(
     comics: Comic[],
     comicFilter: ComicFilter
@@ -25,6 +39,13 @@ export class ApiService {
     return of(response);
   }
 
+  /**
+   * setFavorite
+   * @param {Comic[]} comics
+   * @param {number} sourceId
+   * @param {boolean} value
+   * @returns {Observable} response
+   */
   setFavorite(
     comics: Comic[],
     sourceId: number,

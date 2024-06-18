@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
+/**
+ * InputComponent
+ */
 @Component({
   selector: 'app-input',
   standalone: true,
@@ -10,7 +13,12 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './input.component.scss',
 })
 export class InputComponent {
+  /** key */
   @Input() key: string = '';
+
+  /** form */
   @Input() form!: FormGroup;
+
+  /** inputType */
   @Input() inputType: string = 'text';
 }

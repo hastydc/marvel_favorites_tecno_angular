@@ -3,6 +3,9 @@ import { RouterModule } from '@angular/router';
 import { RoutePath } from '@app/models/routePath.enum';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * LogoComponent
+ */
 @Component({
   selector: 'app-logo',
   standalone: true,
@@ -11,5 +14,6 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './logo.component.scss',
 })
 export class LogoComponent {
+  /** routePath */
   routePath = RoutePath;
 }
