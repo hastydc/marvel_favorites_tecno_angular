@@ -10,42 +10,51 @@
     </div>
     } @else { @for (comic of comics; track comic.id) {
     <div class="td">
-      <div class="td__picture">
-        <img
-          class="td__img"
-          [alt]="'image' | translate"
-          [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"
-        />
-      </div>
-
       <div class="td__content-wrapper">
-        <div class="td__content">
-          <h3 class="td__title">
-            {{ comic.title }}
-          </h3>
+        <h3 class="td__title">
+          <div class="td__action" (click)="toggleDetail(comic.id)">
+            <app-detail-button
+              [active]="actives[comic.id]"
+              [iconClose]="'cross'"
+              [iconOpen]="'plus'"
+            />
+          </div>
 
-          <div class="td__actions">
-            <div class="td__action">
-              <app-button
-                [label]="'favorite' | translate"
-                (click)="toggleFavorite(comic)"
-              />
+          {{ comic.title }}
+        </h3>
+
+        <div class="td__content-detail">
+          <div
+            class="td__content"
+            [ngClass]="{ 'td__content--active': actives[comic.id] }"
+          >
+            <div class="td__detail">
+              <app-detail [comic]="comic" />
             </div>
+          </div>
 
-            <div class="td__action">
-              <app-button
-                [label]="'seeMore' | translate"
-                (click)="toggleDetail(comic.id)"
+          <div
+            class="td__img"
+            [style.background-image]="
+              'url(' +
+              comic.thumbnail.path +
+              '.' +
+              comic.thumbnail.extension +
+              ')'
+            "
+          >
+            <div class="td__action" (click)="toggleFavorite(comic)">
+              <app-detail-button
+                [active]="comic.isFavorite"
+                [iconClose]="'trash'"
+                [iconOpen]="'hearth'"
               />
             </div>
           </div>
         </div>
-
-        <div class="td__detail">
-          <app-detail [comic]="comic" />
-        </div>
       </div>
     </div>
+
     } }
   </div>
 </div>
