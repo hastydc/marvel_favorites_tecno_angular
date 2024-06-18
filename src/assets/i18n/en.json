@@ -17,5 +17,7 @@
   "emailIsNotValid": "Email is not valid",
   "invalidCredentials": "Invalid credentials",
   "successfulSignIn": "Successful sign in",
-  "successfulSignUp": "Successful sign up"
+  "successfulSignUp": "Successful sign up",
+  "allComics": "All comics",
+  "favoriteComics": "Favorite comics"
 }

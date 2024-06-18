@@ -1,0 +1,13 @@
+@import 'mixins';
+@import 'functions';
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: rem(32);
+
+  @include media(tablet) {
+    gap: rem(64);
+  }
+}

@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+  <section class="dashboard__buttons">
+    <app-buttons (eventFilter)="filter($event)" />
+  </section>
+
+  <section class="dashboard__table">
+    <app-table [comics]="comics" />
+  </section>
+</div>
