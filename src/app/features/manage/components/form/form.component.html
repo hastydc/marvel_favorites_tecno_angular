@@ -1,0 +1,76 @@
+<section class="session-form">
+  @if (form) {
+  <form class="form form__content" [formGroup]="form">
+    <div class="form__inputs">
+      <ng-container
+        *ngTemplateOutlet="
+          fieldset;
+          context: {
+            data: { key: formKey.EMAIL, label: 'email', inputType: 'text' }
+          }
+        "
+      />
+
+      <ng-container
+        *ngTemplateOutlet="
+          fieldset;
+          context: {
+            data: {
+              key: formKey.PASSWORD,
+              label: 'password',
+              inputType: 'password'
+            }
+          }
+        "
+      />
+    </div>
+
+    <div class="form__button">
+      <app-button
+        [disabled]="form.invalid || !form.touched || loading"
+        [label]="btnLabel"
+        [mask]="true"
+        (actionEvent)="action()"
+      />
+    </div>
+  </form>
+  }
+
+  <ng-template #fieldset let-data="data">
+    <fieldset class="form__fieldset">
+      <label
+        class="form__label"
+        [ngClass]="{
+          'form__label--error':
+            form.controls[data.key].invalid && form.controls[data.key].touched
+        }"
+      >
+        {{ data.label | translate }}
+      </label>
+
+      <div class="form__input">
+        <app-input
+          [form]="form"
+          [key]="data.key"
+          [inputType]="data.inputType"
+        />
+      </div>
+
+      @if ( form.controls[data.key].invalid && form.controls[data.key].touched )
+      {
+      <div class="form__error">
+        @if (form.controls[data.key].errors?.['required']) {
+        {{
+          'fieldIsRequired' | translate : { field: (data.label | translate) }
+        }}
+        } @if (form.controls[data.key].errors?.['email']) {
+        {{
+          'emailIsNotValid' | translate : { field: (data.label | translate) }
+        }}
+        }
+      </div>
+
+      }
+    </fieldset>
+  </ng-template>
+</section>

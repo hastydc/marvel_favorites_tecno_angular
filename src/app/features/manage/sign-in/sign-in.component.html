@@ -1,0 +1,19 @@
+<section class="sign-in sign">
+  <div class="sign__wrapper">
+    <div class="sign__logo"><app-logo /></div>
+
+    <div class="sign__form-wrapper">
+      <div [routerLink]="routePath.SING_UP" class="sign__redirect">
+        {{ 'createAnAccountHere' | translate }}
+      </div>
+
+      <div class="sign__form">
+        <app-form
+          [btnLabel]="'signIn'"
+          [loading]="loading"
+          (btnAction)="signIn($event)"
+        />
+      </div>
+    </div>
+  </div>
+</section>

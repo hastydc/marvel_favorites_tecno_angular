@@ -39,7 +39,7 @@ export class ToastComponent {
   getOverlayConfig(): OverlayConfig {
     return new OverlayConfig({
       hasBackdrop: false,
-      width: '40%',
+      width: '50%',
       positionStrategy: this.overlay
         .position()
         .global()
