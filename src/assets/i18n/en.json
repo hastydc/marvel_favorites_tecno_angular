@@ -31,5 +31,6 @@
   "creators": "Creators",
   "characters": "Characters",
   "successfullyAdded": "Added successfully to favorites",
-  "successfullyRemoved": "Removed successfully from favorites"
+  "successfullyRemoved": "Removed successfully from favorites",
+  "notFound": "Page not found"
 }
