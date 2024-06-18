@@ -17,21 +17,12 @@
   top: 0;
   gap: rem(32);
 
-  &__back {
-    display: flex;
-    height: rem(22);
-    height: rem(22);
-    position: absolute;
-    left: rem(16);
-  }
-
   &__logo {
     display: flex;
     flex: 1;
     justify-content: flex-start;
     height: 100%;
     box-sizing: border-box;
-    padding-left: rem(54);
   }
 
   &__img {

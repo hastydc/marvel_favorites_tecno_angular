@@ -1,1 +1,12 @@
-{}
+{
+  "back": "Back",
+  "marvel": "Marvel",
+  "showOrHideMenu": "Show or hide menu",
+  "switchTheme": "Switch theme",
+  "light": "Light",
+  "dark": "Dark",
+  "home": "Home",
+  "signIn": "Sign in",
+  "signUp": "Sign up",
+  "createList": "Create list"
+}
