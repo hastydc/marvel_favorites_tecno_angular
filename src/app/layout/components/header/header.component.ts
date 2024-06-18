@@ -8,6 +8,7 @@ import { NavigationStart, Router, RouterModule } from '@angular/router';
 import { LogoComponent } from '../../../shared/components/logo/logo.component';
 import { RoutePath } from '@app/models/routePath.enum';
 import { Subject, takeUntil } from 'rxjs';
+import { SignOutComponent } from '../sign-out/sign-out.component';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ import { Subject, takeUntil } from 'rxjs';
     MenuIconComponent,
     MenuPanelComponent,
     ThemeSwitcherComponent,
+    SignOutComponent,
     TranslateModule,
     RouterModule,
     LogoComponent,

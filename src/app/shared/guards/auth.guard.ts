@@ -3,7 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 import { RoutePath } from '@app/models/routePath.enum';
 import { StorageKey } from '@app/models/storageKey.enum';
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const authGuard: CanActivateFn = (route) => {
   if (`/${route.url[0].path}` !== RoutePath.HOME) return true;
 
   const isAuth =
