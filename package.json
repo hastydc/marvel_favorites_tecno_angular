@@ -5,8 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-base": "ng build --base-href=/marvel-favorites/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
     "prettier": "prettier ./src --write",
     "lint": "ng lint",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s"

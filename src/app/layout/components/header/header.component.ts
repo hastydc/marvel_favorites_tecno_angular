@@ -1,4 +1,4 @@
-import { Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MenuIconComponent } from '../menu-icon/menu-icon.component';
 import { MenuPanelComponent } from '../menu-panel/menu-panel.component';
 import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
@@ -25,8 +25,8 @@ import { SignOutComponent } from '../sign-out/sign-out.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnDestroy {
-  private readonly router = inject(Router);
+export class HeaderComponent implements OnDestroy, OnInit {
+  readonly router = inject(Router);
 
   /** showMenu */
   public showMenu: boolean = false;
@@ -43,7 +43,9 @@ export class HeaderComponent implements OnDestroy {
 
   constructor() {
     this.isSessionPage = this.router.url !== RoutePath.HOME;
+  }
 
+  ngOnInit(): void {
     this.router.events.pipe(takeUntil(this.unsubscribe)).subscribe((event) => {
       if (!(event instanceof NavigationStart)) return;
 

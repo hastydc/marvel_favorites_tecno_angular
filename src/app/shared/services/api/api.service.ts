@@ -37,8 +37,4 @@ export class ApiService {
 
     return of(comics);
   }
-
-  private _formatResponse(comics: Comic[]): Comic[] {
-    return [];
-  }
 }

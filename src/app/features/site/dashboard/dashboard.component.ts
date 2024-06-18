@@ -34,16 +34,21 @@ export class DashboardComponent implements OnInit {
       .subscribe({
         next: (comics) => {
           this.comics = comics;
-          console.log(this.comics);
         },
       });
   }
 
   toggleFavorite({ id, isFavorite }: Comic): void {
-    this.apiService.setFavorite(this.baseComics, id, !isFavorite).subscribe({
+    const value = !isFavorite;
+
+    this.apiService.setFavorite(this.baseComics, id, value).subscribe({
       next: (comics) => {
         this.baseComics = comics;
         this.filter(this.comicFilter);
+        this.toastService.setData({
+          show: true,
+          text: value ? 'successfullyAdded' : 'successfullyRemoved',
+        });
       },
     });
   }

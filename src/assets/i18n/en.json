@@ -29,5 +29,8 @@
   "printPrice": "Print price",
   "digitalPurchasePrice": "Digital purchase price",
   "creators": "Creators",
-  "characters": "Characters"
+  "characters": "Characters",
+  "successfullyAdded": "Added successfully to favorites",
+  "successfullyRemoved": "Removed successfully from favorites",
+  "notFound": "Page not found"
 }

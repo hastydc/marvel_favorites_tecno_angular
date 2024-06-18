@@ -14,7 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class SignOutComponent {
   private readonly router = inject(Router);
 
-  signOunt(): void {
+  signOut(): void {
     localStorage.removeItem(StorageKey.AUTH);
     this.router.navigate([RoutePath.SIGN_IN]);
   }
